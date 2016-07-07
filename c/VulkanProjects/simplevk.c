@@ -57,7 +57,7 @@ int main() {
 	const char* extensionNames[] = { 
 		VK_KHR_SURFACE_EXTENSION_NAME, 
 		PLATFORM_SURFACE_NAME, 
-		VK_EXT_DEBUG_REPORT_EXTENSION_NAME
+		VK_EXT_DEBUG_REPORT_EXTENSION_NAME,
 	};
 	
 	const VkInstanceCreateInfo instanceInfo = {
