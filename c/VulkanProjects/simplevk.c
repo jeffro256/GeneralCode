@@ -38,90 +38,6 @@ int32_t msgCode, const char* pLayerPrefix, const char* pMsg, void* pUserData) {
 	return false;
 }
 
-#ifdef _WIN32
-LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
-    char tmp_str[] = APP_LONG_NAME;
-
-    switch (uMsg) {
-    case WM_CREATE:
-        return 0;
-    case WM_CLOSE:
-        PostQuitMessage(validation_error);
-        return 0;
-    case WM_PAINT:
-        if (demo.prepared) {
-            demo_run(&demo);
-            break;
-        }
-    case WM_SIZE:
-        // Resize the application to the new window size, except when
-        // it was minimized. Vulkan doesn't support images or swapchains
-        // with width=0 and height=0.
-        if (wParam != SIZE_MINIMIZED) {
-            demo.width = lParam & 0xffff;
-            demo.height = lParam & 0xffff0000 >> 16;
-            demo_resize(&demo);
-        }
-        break;
-    default:
-        break;
-    }
-    return (DefWindowProc(hWnd, uMsg, wParam, lParam));
-}
-
-/*
-
-           *************************** This function is Windows specific !!! ***************************
-
-*/
-HWND createWin32Window() {
-    WNDCLASS win_class;
-	HINSTANCE hInst = GetModuleHandle(NULL);    // BAD PORTABILITY WITH LIBRARIES!
-	
-    // Initialize the window class structure:
-    win_class.style = CS_HREDRAW | CS_VREDRAW;
-    win_class.lpfnWndProc = WndProc;
-    win_class.cbClsExtra = 0;
-    win_class.cbWndExtra = 0;
-    win_class.hInstance = hInst; // hInstance   
-    win_class.hIcon = NULL;
-    win_class.hCursor = LoadCursor(NULL, IDC_ARROW);
-    win_class.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
-    win_class.lpszMenuName = NULL;
-    win_class.lpszClassName = APPNAME;
-    // Register window class:
-    if (!RegisterClass(&win_class)) {
-        // It didn't work, so try to give a useful error:
-        printf("Unexpected error trying to start the application!\n");
-        fflush(stdout);
-        exit(1);
-    }
-    // Create window with the registered class:
-    RECT wr = {0, 0, demo->width, demo->height};
-    AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, FALSE);
-    HWND window = CreateWindowEx(0,
-                                 APPNAME,            // class name
-                                 APPNAME,            // app name
-                                 WS_OVERLAPPEDWINDOW | // window style
-                                     WS_VISIBLE | WS_SYSMENU,
-                                 100, 100,           // x/y coords
-                                 wr.right - wr.left, // width
-                                 wr.bottom - wr.top, // height
-                                 NULL,               // handle to parent
-                                 NULL,               // handle to menu
-                                 hInst,              // hInstance
-                                 NULL);              // no extra parameters
-    if (!window) {
-        // It didn't work, so try to give a useful error:
-        printf("Cannot create a window in which to draw!\n");
-        fflush(stdout);
-        exit(1);
-    }
-	
-	return window;
-}
-#endif
-
 int main() {
 	VkResult err;
 	
@@ -134,7 +50,7 @@ int main() {
 		.applicationVersion = 0,
 		.pEngineName = APPNAME,
 		.engineVersion = 0,
-		.apiVersion = VK_API_VERSION_1_0,
+		.apiVersion = VK_API_VERSION,
 	};
 	
 	const char* layerNames[] = { "VK_LAYER_LUNARG_standard_validation" };
