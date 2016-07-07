@@ -1,0 +1,1 @@
+gcc -Wall main.c ~/Code/c/lib/myglutils.c ~/Code/c/lib/logger.c -o simple_test -I ~/Code/c/include/ -L /opt/local/lib -lglfw -lGLEW

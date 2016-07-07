@@ -1,0 +1,3 @@
+nasm lprint.asm -fmacho64
+gcc c_calling.c lprint.o -o c_calling
+rm lprint.o

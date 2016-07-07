@@ -1,0 +1,121 @@
+package jeffrey_ryan.gamecore2d.node;
+
+import java.awt.Graphics2D;
+import java.util.ArrayList;
+import java.util.List;
+
+import jeffrey_ryan.gamecore2d.GameListener;
+import jeffrey_ryan.gamecore2d.physics.PhysicsProperties;
+import jeffrey_ryan.gamecore2d.physics.Vector2D;
+
+public class GameNode implements GameListener {
+	public String name;
+	public GameScene scene;
+	public GameNode parent = null;
+	public Vector2D pos;
+	public double zPos;
+	public PhysicsProperties pbody;
+	
+	protected List<GameNode> children = new ArrayList<GameNode>();
+	
+	public GameNode(String name) {
+		this.name = name;
+	}
+	
+	public GameNode() {
+		this("Untitled");
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void addChild(GameNode child) {
+		children.add(child);
+		
+		child.parent = this;
+		child.scene = scene;
+	}
+	
+	public void removeChild(GameNode child) {
+		children.remove(child);
+		
+		child.scene = null;
+		child.parent = null;
+	}
+	
+	public void removeAllChildren() {
+		for (GameNode child : children) {
+			child.scene = null;
+			child.parent = null;
+		}
+		
+		children.clear();
+	}
+	
+	public List<GameNode> getChildren() {
+		return children;
+	}
+	
+	public GameNode getChildWithName(String name) {
+		for (GameNode child : children) {
+			if (child.name == name) {
+				return child;
+			}
+		}
+		
+		return null;
+	}
+	
+	@Override
+	public void update(double seconds) {
+		pbody.update(seconds);
+		for (GameNode child : children) {
+			child.update(seconds);
+		}
+	}
+	
+	@Override
+	public void render(Graphics2D g, float interpolation) {
+		zrender(g, interpolation, getMinZPos(), getMaxZPos());
+	}
+	
+	protected void zrender(Graphics2D g, float interpolation, double minZ, double maxZ) {
+		double nextZPos = maxZ + 1;
+		
+		for (GameNode child : children) {
+			if (child.zPos == minZ) {
+				child.render(g, interpolation);
+			}
+			else if (child.zPos > minZ && child.zPos < nextZPos) { 
+				nextZPos = child.zPos;
+			}
+		}
+		
+		if (nextZPos != maxZ + 1) zrender(g, interpolation, nextZPos, maxZ);
+	}
+	
+	private double getMinZPos() {
+		double min = Double.MAX_VALUE;
+		
+		for (GameNode child : children) {
+			if (child.zPos < min) {
+				min = child.zPos;
+			}
+		}
+		
+		return min;
+	}
+	
+	private double getMaxZPos() {
+		double max = Double.MIN_VALUE;
+		
+		for (GameNode child : children) {
+			if (child.zPos > max) {
+				max = child.zPos;
+			}
+		}
+		
+		return max;
+	}
+}

@@ -1,0 +1,3 @@
+gcc -Wall -c ~/Code/c/lib/myglutils.c ~/Code/c/lib/logger.c -I ~/Code/c/include/
+g++ -Wall main.cpp myglutils.o logger.o -o cuberot -I /opt/local/include/ -I ~/Code/c/include/ -L /opt/local/lib -l glfw -l GLEW -framework OpenGL
+rm myglutils.o logger.o

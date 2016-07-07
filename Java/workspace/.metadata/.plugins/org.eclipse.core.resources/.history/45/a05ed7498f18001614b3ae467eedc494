@@ -1,0 +1,53 @@
+package jeffrey_ryan.gamecore2d.physics;
+
+public class Collision {
+	public static Vector2D getCollisionNormal(AABB a, AABB b) {
+		/*
+		final Vector2D[] faces = { 
+		    new Vector2D(-1,  0),
+		    new Vector2D( 1,  0),
+   	        new Vector2D( 0, -1),
+			new Vector2D( 0,  1),
+		};
+			    
+	    double[] distances = { 
+	        b.getMaxX() - a.getMinX(),
+	        a.getMaxX() - b.getMinX(),
+	        b.getMaxY() - a.getMinY(),
+	        a.getMaxY() - b.getMinY(),
+	    };
+
+	    double dcoll = 0;
+	    Vector2D n = new Vector2D();
+
+	    for (int i = 0; i < 4; i++) {
+	        if (distances[i] < dcoll) {
+	            dcoll = distances[i];
+	            n = faces[i];
+	        }
+	    }
+
+	    return n;
+	    */
+		
+		return a.x > b.x ? new Vector2D(1, 0) : new Vector2D(-1, 0);
+	}
+	
+	// TODO remove last 2 parameters 
+	public static void resolveCollision(PhysicsBody a, PhysicsBody b, AABB x, AABB y) {
+		Vector2D n = getCollisionNormal(x, y);
+
+		System.out.println(n);
+		
+		double e = a.restitution * b.restitution;
+		double normalVel = b.vel.minus(a.vel).dot(n);
+
+	     if (normalVel > 0) return;
+
+	     double j = -(1 + e) * normalVel / (1 / a.mass + 1 / b.mass);
+
+	     Vector2D impulse = n.times(j);
+	     a.applyImpluse(impulse.times(-1));
+	     b.applyImpluse(impulse);
+	}
+}

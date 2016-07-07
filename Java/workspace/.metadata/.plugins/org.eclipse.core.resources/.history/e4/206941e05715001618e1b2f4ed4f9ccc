@@ -1,0 +1,38 @@
+package jeffrey_ryan.gamecore2d.physics;
+
+public class PhysicsProperties {
+	public Vector2D pos;
+	public Vector2D vel;
+	public Vector2D accel;
+	public double mass;
+	
+	public PhysicsProperties(Vector2D pos, Vector2D vel, Vector2D accel, double mass) {
+		if (pos == null) throw new IllegalArgumentException("pos == null");
+		if (vel == null) throw new IllegalArgumentException("vel == null");
+		if (accel == null) throw new IllegalArgumentException("accel == null");
+		if (mass == 0) throw new IllegalArgumentException("mass == 0");
+		
+		this.pos = pos;
+		this.vel = vel;
+		this.accel = accel;
+		this.mass = mass;
+	}
+	
+	public PhysicsProperties() {
+		this(new Vector2D(), new Vector2D(), new Vector2D(), 1);
+	}
+	
+	public void applyForce(Vector2D force) {
+		accel.add(force.over(mass));
+	}
+	
+	public void applyImpluse(Vector2D impluse) {
+		vel.add(impluse.over(mass));
+	}
+	
+	public void update(double seconds) {
+		vel.add(accel.times(seconds));
+	    pos.add(vel.times(seconds).plus(accel.times(seconds).times(seconds).over(2)));
+	    accel.multiply(0);
+	}
+}

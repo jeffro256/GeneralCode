@@ -1,0 +1,3 @@
+nasm -fmacho64 sum.asm -o sum.o && \
+gcc -o extern_test extern_test.c sum.o
+rm sum.o

@@ -1,0 +1,23 @@
+package jeffrey_ryan.gamecore2d.physics;
+
+import java.awt.geom.Rectangle2D.Double;
+
+public class AABB extends Double {
+	private static final long serialVersionUID = -8144864317205414339L;
+	
+	public double getXMin() {
+		return x;
+	}
+	
+	public double getXMax() {
+		return x + width;
+	}
+	
+	public double getYMin() {
+		return y;
+	}
+	
+	public double getYMax() {
+		return y + width;
+	}
+}

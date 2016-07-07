@@ -1,0 +1,13 @@
+gcc -fno-asynchronous-unwind-tables -c -o call_test.o call_test.c && \
+gcc -fno-asynchronous-unwind-tables -c -o sum.o sum.c && \
+gcc call_test.o sum.o -o call_test && \
+objconv -fnasm call_test.o && \
+objconv -fnasm sum.o && \
+rm call_test.o && \
+rm sum.o && \
+echo "######################################################" && \
+echo "##########EXECUTABLE MAKES NO VISIBLE OUTPUT##########" && \
+echo "######################################################" && \
+cat call_test.asm && \
+echo "######################################################" && \
+cat sum.asm

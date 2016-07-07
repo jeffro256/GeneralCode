@@ -1,0 +1,7 @@
+PROGRAM="perspective"
+MAIN=$PROGRAM".cpp"
+FILES="../lib/myglutils.cpp"
+CFLAGS=$(pkg-config --cflags glfw3)" "$(pkg-config --libs glfw3)" -lGLEW -framework OpenGL"
+COMPILER=g++
+
+$COMPILER $MAIN -o $PROGRAM $FILES $CFLAGS

@@ -1,0 +1,3 @@
+gcc -c ~/Code/c/lib/logger.c ~/Code/c/lib/myglutils.c -I ~/Code/c/include/ -I /opt/local/include/
+g++ -std=c++11 -g main.cpp key_listener.cpp keyboard_state.cpp -o keyboard_test logger.o myglutils.o -I ~/Code/c/include/ -I /opt/local/include -L /opt/local/lib -l GLEW -l glfw -framework OpenGL
+rm -f logger.o myglutils.o

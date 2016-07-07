@@ -1,0 +1,7 @@
+PROGRAM="colorcube"
+MAIN=$PROGRAM".cpp"
+FILES="myglutils.cpp"
+CFLAGS="-Wall "$(pkg-config --cflags glfw3)" "$(pkg-config --libs glfw3)" -lGLEW -framework OpenGL -l c++"
+COMPILER=gcc
+
+$COMPILER $MAIN -o $PROGRAM $FILES $CFLAGS

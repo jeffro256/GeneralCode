@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;GameMain&apos; to &apos;BotMain&apos;&#x0A;- Original project: &apos;Roman Kangaroo&apos;&#x0A;- Original element: &apos;GameMain&apos;&#x0A;- Renamed element: &apos;BotMain&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;GameMain&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{GameMain.java[GameMain" matchStrategy="1" name="BotMain" qualified="false" references="true" similarDeclarations="false" stamp="1442357973007" textual="false" version="1.0"/>
+</session>

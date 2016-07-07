@@ -1,0 +1,7 @@
+package jeffrey_ryan.gamecore2d.physics;
+
+import java.awt.geom.Rectangle2D.Double;
+
+public class AABB extends Double {
+	private static final long serialVersionUID = -8144864317205414339L;
+}

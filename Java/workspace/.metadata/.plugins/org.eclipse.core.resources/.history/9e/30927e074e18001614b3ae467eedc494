@@ -1,0 +1,5 @@
+package jeffrey_ryan.gamecore2d.physics;
+
+public class Collision {
+
+}

@@ -1,0 +1,1 @@
+gcc milli.c -o milli

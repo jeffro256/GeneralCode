@@ -1,0 +1,46 @@
+package jeffrey_ryan.mle.player;
+
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Point;
+
+import jeffrey_ryan.gamecore2d.node.GameNode;
+import jeffrey_ryan.gamecore2d.physics.PhysicsProperties;
+import jeffrey_ryan.gamecore2d.physics.Vector2D;
+import jeffrey_ryan.mle.map.GameMap;
+
+public class Player extends GameNode {
+	public Vector2D size;
+	public PhysicsProperties pprops;
+	public double moveSpeed = 6; 		// TODO Make this not baked in
+	public Color color;
+	
+	public Player(String name, Vector2D size, PhysicsProperties pprops, Color color) {
+		super(name);
+		
+		if (size == null) throw new IllegalArgumentException("size == null");
+		if (pprops == null) throw new IllegalArgumentException("pprops == null");
+		if (color == null) throw new IllegalArgumentException("color == null");
+
+		this.size = size;
+		this.pprops = pprops;
+		this.color = color;
+	}
+
+	@Override
+	public void update(double seconds) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void render(Graphics2D g, float interpolation) {
+		GameMap map = (GameMap) scene.getChildWithName("Map");
+		Point rp = map.transformToScreen(new Vector2D(pprops.pos.x - size.x / 2, pprops.pos.y + size.y / 2));
+		System.out.println(rp);
+		g.setColor(color);	
+		g.fillRect(rp.x, rp.y, (int) (size.x * zoom), (int) (size.y * zoom));
+		
+		System.out.println(name);
+	}
+}

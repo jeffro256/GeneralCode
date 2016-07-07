@@ -1,0 +1,1 @@
+gcc main.c ~/Code/c/lib/myglutils.c ~/Code/c/lib/logger.c -o cpostest -I ~/Code/c/include/ -I /opt/local/include/ -L /opt/local/lib/ -lGLEW -lglfw -framework OpenGL

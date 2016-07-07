@@ -1,0 +1,162 @@
+global _itoa
+
+section .text
+_itoa:
+	push rbp
+	mov rbp, rsp
+	push rbx
+	; start the real stuff!
+	add rdi, nullIndex
+	mov eax, esi
+	cmp eax, 0
+	setl bl
+	mov [rdi], byte 0
+	test bl, bl
+	jz itoa_loop
+	neg eax
+itoa_loop:
+	cmp eax, 100
+	jb itoa_loop_end
+	mov ecx, eax
+	sub rdi, 2
+	push rbx
+	mov ebx, 100
+	xor edx, edx
+	div ebx
+	mov r11, rax
+	xor edx, edx
+	mul ebx
+	pop rbx
+	sub ecx, eax
+	mov rax, r11
+	lea rsi, [rel str100p]
+	mov cx, [rsi + rcx*2]
+	mov [rdi], cx
+	jmp itoa_loop
+itoa_loop_end:
+	sub rdi, 2
+	lea rsi, [rel str100p]
+	mov cx, [rsi + rax*2]
+	mov [rdi], cx
+	test bl, bl
+	jz itoa_return
+	dec rdi
+	cmp eax, 10
+	setl bl
+	and rbx, 1
+	mov [rdi + rbx], byte '-'
+itoa_return:
+	cmp eax, 10
+	jnb itoa_return_2
+	inc rdi
+itoa_return_2:
+	mov rax, rdi
+	; do cleanup
+	pop rbx
+	mov rsp, rbp
+	pop rbp
+	ret
+
+section .data
+nullIndex: equ 11
+str100p:
+	dw 0x3030
+	dw 0x3130
+	dw 0x3230
+	dw 0x3330
+	dw 0x3430
+	dw 0x3530
+	dw 0x3630
+	dw 0x3730
+	dw 0x3830
+	dw 0x3930
+	dw 0x3031
+	dw 0x3131
+	dw 0x3231
+	dw 0x3331
+	dw 0x3431
+	dw 0x3531
+	dw 0x3631
+	dw 0x3731
+	dw 0x3831
+	dw 0x3931
+	dw 0x3032
+	dw 0x3132
+	dw 0x3232
+	dw 0x3332
+	dw 0x3432
+	dw 0x3532
+	dw 0x3632
+	dw 0x3732
+	dw 0x3832
+	dw 0x3932
+	dw 0x3033
+	dw 0x3133
+	dw 0x3233
+	dw 0x3333
+	dw 0x3433
+	dw 0x3533
+	dw 0x3633
+	dw 0x3733
+	dw 0x3833
+	dw 0x3933
+	dw 0x3034
+	dw 0x3134
+	dw 0x3234
+	dw 0x3334
+	dw 0x3434
+	dw 0x3534
+	dw 0x3634
+	dw 0x3734
+	dw 0x3834
+	dw 0x3934
+	dw 0x3035
+	dw 0x3135
+	dw 0x3235
+	dw 0x3335
+	dw 0x3435
+	dw 0x3535
+	dw 0x3635
+	dw 0x3735
+	dw 0x3835
+	dw 0x3935
+	dw 0x3036
+	dw 0x3136
+	dw 0x3236
+	dw 0x3336
+	dw 0x3436
+	dw 0x3536
+	dw 0x3636
+	dw 0x3736
+	dw 0x3836
+	dw 0x3936
+	dw 0x3037
+	dw 0x3137
+	dw 0x3237
+	dw 0x3337
+	dw 0x3437
+	dw 0x3537
+	dw 0x3637
+	dw 0x3737
+	dw 0x3837
+	dw 0x3937
+	dw 0x3038
+	dw 0x3138
+	dw 0x3238
+	dw 0x3338
+	dw 0x3438
+	dw 0x3538
+	dw 0x3638
+	dw 0x3738
+	dw 0x3838
+	dw 0x3938
+	dw 0x3039
+	dw 0x3139
+	dw 0x3239
+	dw 0x3339
+	dw 0x3439
+	dw 0x3539
+	dw 0x3639
+	dw 0x3739
+	dw 0x3839
+	dw 0x3939

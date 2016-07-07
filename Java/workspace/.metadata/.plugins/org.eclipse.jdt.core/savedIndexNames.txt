@@ -1,0 +1,24 @@
+INDEX VERSION 1.127+/Users/jeffaryan/Code/Java/workspace/.metadata/.plugins/org.eclipse.jdt.core
+4226198978.index
+2507494290.index
+353147138.index
+2619716714.index
+2654920010.index
+2936287081.index
+1271342938.index
+883634178.index
+1880139076.index
+1247459299.index
+505420999.index
+248432883.index
+3669867886.index
+3740299137.index
+4124263567.index
+3068211809.index
+626857893.index
+473106283.index
+2235899118.index
+3746283354.index
+891561327.index
+477636451.index
+501142777.index

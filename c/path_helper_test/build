@@ -1,0 +1,1 @@
+gcc main.c ~/Code/c/lib/path_helper.c -o path_test -I ~/Code/c/include/

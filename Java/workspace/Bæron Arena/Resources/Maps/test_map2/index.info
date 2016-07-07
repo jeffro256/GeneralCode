@@ -1,0 +1,5 @@
+map-file: test_map2.map
+tileset-file: tileset.png
+map-size: 25x20
+tile-res: 16x16
+max-tile-id: 3

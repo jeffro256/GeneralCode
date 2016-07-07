@@ -1,0 +1,6 @@
+OLD_DIR="$(pwd)"
+cd `dirname $0`
+gcc -c -Wall ~/Code/c/lib/logger.c ~/Code/c/lib/myglutils.c -I ~/Code/c/include/ -I /opt/local/include/ && \
+g++ -std=c++11 -Wall main.cpp key_input_store.cpp logger.o myglutils.o -o key_in_store_test -I ~/Code/c/include/ -I /opt/local/include/ -L /opt/local/lib/ -lGLEW -lglfw -framework OpenGL
+rm logger.o myglutils.o
+cd $OLD_DIR

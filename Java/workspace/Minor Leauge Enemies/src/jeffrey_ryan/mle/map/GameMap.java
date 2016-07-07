@@ -1,0 +1,82 @@
+package jeffrey_ryan.mle.map;
+
+import java.awt.Color;
+import java.awt.GradientPaint;
+import java.awt.Graphics2D;
+import java.awt.Paint;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.geom.Rectangle2D;
+
+import jeffrey_ryan.gamecore2d.node.GameNode;
+import jeffrey_ryan.gamecore2d.physics.Vector2D;
+
+public class GameMap extends GameNode {
+	public enum TransformMethod {
+		NEAREST,
+		FLOOR,
+		CEIL,
+	}
+	
+	public Vector2D camPos;
+
+	private Vector2D size;
+	private double pixelsPerUnit;
+	
+	public GameMap(String name, Vector2D size, Vector2D camPos) {
+		super(name);
+		
+		this.size = size;
+		this.camPos = camPos;
+	}
+	
+	public Point transformToScreen(Vector2D p, TransformMethod method) {
+	    Vector2D screenSize = new Vector2D(scene.getCanvasSize().getWidth(), scene.getCanvasSize().getHeight());
+	    Vector2D cameraRelative = p.minus(camPos).times(pixelsPerUnit);
+	    Vector2D preciseScreenPoint = new Vector2D(cameraRelative.x + screenSize.x / 2, screenSize.y / 2 - cameraRelative.y);
+
+	    Point screenPoint = null;
+	    switch (method) {
+	    case NEAREST:
+	    	screenPoint = new Point((int) Math.round(preciseScreenPoint.x), (int) Math.round(preciseScreenPoint.y));
+	    case FLOOR:
+	    	screenPoint = new Point((int) preciseScreenPoint.x, (int) preciseScreenPoint.y);
+	    case CEIL:
+	    	screenPoint = new Point((int) Math.ceil(preciseScreenPoint.x), (int) Math.ceil(preciseScreenPoint.y));
+	    }
+	    
+	    return screenPoint;
+	}
+	
+	public Point transformToScreen(Vector2D p) {
+		return transformToScreen(p, TransformMethod.NEAREST);
+	}
+	
+	public void setUnitRatio(double pixelsPerUnit) {
+		this.pixelsPerUnit = pixelsPerUnit;
+	}
+	
+	public Rectangle2D getBounds() {
+		Vector2D bottom = size.times(-0.5);
+		
+		return new Rectangle2D.Double(bottom.x, bottom.y, size.x, size.y);
+	}
+	
+	public Vector2D getSize() {
+		return size;
+	}
+	
+	@Override
+	public void render(Graphics2D g, float interpolation) {
+		Point c1 = transformToScreen(new Vector2D(-size.x / 2, size.y / 2));
+		Point c2 = transformToScreen(new Vector2D(size.x / 2, -size.y / 2));
+		Paint mapPaint = new GradientPaint(new Point(c1.x, c2.y), Color.RED, c2, Color.BLUE);
+		g.setPaint(mapPaint);
+		g.fill(new Rectangle(c1.x, c1.y, c2.x - c1.x, c2.y - c1.y));
+	}
+
+	@Override
+	public String toString() {
+		return "Map '" + name + "' with size '" + size + "'";
+	}
+}

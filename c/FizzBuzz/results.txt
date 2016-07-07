@@ -1,0 +1,2 @@
+'fizzbuzz()' did 1000 loops in 0.090134 seconds.
+'fizzbuzz_control()' did 1000 loops in 0.114828 seconds.

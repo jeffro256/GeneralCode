@@ -1,0 +1,16 @@
+#!/usr/local/bin/python3
+
+print('Late day schedule times:')
+
+hour = 9
+minutes = 10
+
+for i in range(1, 19):
+    print('mod {}:\t\t{}:{}'.format(i, hour, minutes))
+    
+    minutes += 20
+    hour += minutes // 60 
+    hour = hour if hour <= 12 else hour - 12
+    minutes %= 60
+
+print('sports:\t\t{}:{}'.format(hour, minutes))

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+ <head>
+  <meta charset="utf-8">
+   <title>
+    Holland Hall | Haiku Learning | The K12 learning management system
+   </title>
+   <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible"/>
+   <link href="/stylesheets/public.css" rel="stylesheet" type="text/css"/>
+   <script type="text/javascript">
+    RAILS_ENV = 'production';
+   </script>
+   <script src="/javascripts/base_1440108347_c8b62917cd.js?1443227400" type="text/javascript">
+   </script>
+   <script src="/javascripts/utils_1433347564_ac9d0e8ff5.js?1443227400" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    var _gaq = _gaq || [];
+
+  _gaq.push(['global._setAccount', 'UA-1174682-25']);
+  _gaq.push(['global._setDomainName', 'none']);
+  _gaq.push(['global._setAllowLinker', true]);
+  _gaq.push(['global._trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1174682-28');
+
+  
+
+  google_dimensions = {"domain":"dimension1","role":"dimension2"};
+
+  ga('set', google_dimensions['domain'], 'hollandhall');
+
+    ga('set', google_dimensions['role'], '');
+
+  ga('send', 'pageview');
+
+  document.on("dom:loaded", function() {
+
+    var send_ga_event = function(event, element){
+      if(_ajax_response_error) return false;
+
+      var data = element.dataset;
+      var arguments = {
+        hitType:       data.eventType ,
+        eventCategory: data.eventCategory,
+        eventAction:   data.eventAction,
+        eventLabel:    data.eventLabel,
+        eventValue:    data.eventValue
+      };
+
+      remove_elements_with_nil_values(arguments);
+      ga('send', arguments);
+    };
+
+    document.on('ajax:success', "[data-event-type][data-event-capture='ajax:success']", function(event, element){
+      send_ga_event(event, element);
+    });
+
+    document.on('click', "[data-event-type][data-event-capture='click']", function(event, element){
+      send_ga_event(event, element);
+    });
+  });
+   </script>
+   <script type="text/javascript">
+    var _gaq = _gaq || [];
+      _gaq.push(['marketing._setAccount', 'UA-1174682-23']);
+      _gaq.push(['marketing._setDomainName', 'none']);
+      _gaq.push(['marketing._setAllowLinker', true]);
+      _gaq.push(['marketing._trackPageview']);
+
+      (function() {
+        var externalLinkSelector = 'a[href*=.haikulearning.com]';
+
+        window.marketingLinkF = function(ev) {
+          var eventEl = ev.element();
+            linkEl = null;
+          
+          if(!linkEl) {
+            if(eventEl.match(externalLinkSelector)) {
+              linkEl = eventEl;
+            } else {
+              linkEl = eventEl.up(externalLinkSelector);
+            }
+          }
+          if(Object.isElement(linkEl) && linkEl.href && !linkEl.target) {
+            _gaq.push(['marketing._link', linkEl.href+'']);
+            if(!Object.isArray(_gaq))
+              ev.stop();
+          }
+        };
+
+        $(document).observe('dom:loaded', function() {
+          $$(externalLinkSelector).invoke('observe', 'click', marketingLinkF);
+        });
+      })();
+   </script>
+   <style>
+    body{ background-image: url(/images/public/background-02.jpg); }
+   </style>
+   <link href="/stylesheets/login_default_1442942013_2b707c9cd8.css?1443227400" media="all" rel="Stylesheet" type="text/css"/>
+  </meta>
+ </head>
+ <body>
+  <div id="container">
+   <div class="official_announcement official_announcement_about_browser" id="official_announcement_browser_support" style="display:none">
+    Loading
+    <img alt="Loading" src="/images/loading.gif?1443227400"/>
+   </div>
+   <style>
+    @media screen and (min-device-width: 600px) {
+    #browser_support_width { width: 1px; }
+  }
+  @media screen and (max-device-width: 600px) {
+    #browser_support_width { width: 2px; }
+  }
+   </style>
+   <div id="browser_support_width">
+   </div>
+   <script type="text/javascript">
+    if (browser_supported() != true && '1') {
+  ajax_post('/do/account/browser_support_announcement', '', {parameters:'id='+browser_supported()}, '', $('official_announcement_browser_support').show());
+}
+
+official_announcement_hide = function(id) {
+  /**/
+  ajax_post('/do/account/hide_announcement', '', {parameters:'id='+id});
+  new Effect.SlideUp("official_announcement_"+id, {duration:0.3});
+};
+   </script>
+   <script type="text/javascript">
+    HaikuTxt = {
+logout:'Logout',
+ok:'OK',
+more:'more',
+save:'Save',
+cancel:'Cancel',
+not_responding:'The server does not seem to be responding.',
+saving:'Saving ...',
+processing:'Processing ...',
+unsaved_changes:'There are some unsaved changes. Do you want to save the changes and continue?',
+unsaved_no:'No, Don\'t save changes',
+yes:'Yes',
+prev:'Prev',
+next:'Next',
+play:'Play',
+pause:'Pause',
+close:'Close',
+download:'Download',
+slow:'Slow',
+medium:'Medium',
+fast:'Fast',
+sess_timeout_warning:'<b>Are you still there?</b><br /><br />You will be auto-signed out of Haiku Learning in <br /><span id="md-countdown" class="mwk">2 minutes</span>!',
+sess_timeout_button:'I\'m still here',
+sess_timeout_countdown:'#{min} minutes and #{sec} seconds',
+letsgo:'Let\'s Go',
+uploading_files:'Uploading Files',
+error_uploading:'There was an error uploading this file.',
+over_quota:'Over quota'
+};
+HaikuContext = {"user":false};
+DATE_FORMAT= '%B %d, %Y';
+   </script>
+   <div id="header">
+    <a href="http://www.haikulearning.com">
+     <img alt="haiku logo" src="/images/public/login-logo.png">
+     </img>
+    </a>
+    <div class="title">
+     <h3>
+      <span>
+       Holland Hall
+      </span>
+     </h3>
+    </div>
+   </div>
+   <div id="content">
+    <div class="clearfix boxes">
+     <div class="box left login_box">
+      <div class="google_text">
+       <p>
+        <b>
+         Sign in with Google Apps™
+        </b>
+       </p>
+       <p>
+        If you have an email account like me@hollandhall.org, you should sign in using your Google Apps™ account here
+       </p>
+      </div>
+      <script type="text/javascript">
+       jQuery("input[name='openid_identifier']").on('click', function() {
+    selected_domain = jQuery('input:checked[type="radio"][name="openid_identifier"]').val();
+    jQuery('.google_login_link').attr('href', selected_domain);
+  });
+      </script>
+      <a class="google_login_link" href="https://hollandhall.haikulearning.com/do/authentication/google/google_begin?google_domain=hollandhall.org" id="google_logo">
+       <img alt="" src="/images/google-logo.png">
+       </img>
+      </a>
+      <div class="control-group">
+       <div class="controls">
+        <a class="google_login_link btn btn-big" href="https://hollandhall.haikulearning.com/do/authentication/google/google_begin?google_domain=hollandhall.org">
+         Sign in with Google
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="or">
+      OR
+     </div>
+     <div class="box right login_box">
+      <p>
+       <b>
+        Sign in with your Haiku account
+       </b>
+      </p>
+      <p>
+       If you don't have a Google Apps™ account, sign in using the form below.
+      </p>
+      <form action="/do/account/login" id="login_form" method="post">
+       <div class="control-group">
+        <div class="controls">
+         <input autofocus="true" id="login" name="login" placeholder="Username" type="text"/>
+        </div>
+       </div>
+       <div class="control-group">
+        <div class="controls">
+         <input id="password" name="password" placeholder="Password" type="password"/>
+        </div>
+       </div>
+       <div class="control-group">
+        <div class="controls">
+         <label for="remember_me">
+          <input id="remember_me" name="remember_me" type="checkbox" value="1"/>
+          Remember me
+         </label>
+        </div>
+       </div>
+       <div class="control-group">
+        <div class="controls">
+         <button class="btn btn-big" type="submit">
+          Sign in
+         </button>
+        </div>
+       </div>
+       <div class="control-group">
+        <div class="controls">
+         <a class="forgot_password_link" href="/do/account/forgot_password" onclick="TB_dclick(this,event);">
+          Forgot your Username or Password?
+         </a>
+        </div>
+       </div>
+      </form>
+     </div>
+    </div>
+    <script type="text/javascript">
+     Event.observe(window, 'load', function() { require_cookie(); });
+    </script>
+   </div>
+   <div id="footer">
+    <img alt="haiku logo" height="50px" src="/images/signup/haiku-4c-horizontal-reverse.png" style="padding:10px">
+     <a href="http://www.haikulearning.com" style="float:right; padding:25px;">
+      Learn more about Haiku Learning
+     </a>
+    </img>
+   </div>
+  </div>
+ </body>
+</html>

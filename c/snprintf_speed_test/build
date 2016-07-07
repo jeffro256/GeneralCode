@@ -1,0 +1,3 @@
+nasm -fmacho64 itoa.asm && \
+gcc main.c itoa.o -o speedtest && \
+rm itoa.o

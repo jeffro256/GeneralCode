@@ -1,0 +1,4 @@
+nasm -fbin stage1.asm -Ds1_num_secs=1 -o s1.bin -I../include/ && \
+nasm -fbin stage2.asm -o s2.bin -I../include/ && \
+cat *.bin > multi-sector-boot.img
+rm -f *.bin

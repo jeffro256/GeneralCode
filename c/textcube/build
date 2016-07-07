@@ -1,0 +1,7 @@
+gcc -c ~/Code/c/lib/myglutils.c ~/Code/c/lib/logger.c -I ~/Code/c/include/ -I /opt/local/include/ && \
+echo "Compiled library files successfully" && \
+g++ main.cpp myglutils.o logger.o -o textcube -I ~/Code/c/include/ -L /opt/local/lib/ -l GLEW -l glfw -framework OpenGL && \
+echo "Finished compiling program!"
+
+#cleanup 
+rm myglutils.o logger.o

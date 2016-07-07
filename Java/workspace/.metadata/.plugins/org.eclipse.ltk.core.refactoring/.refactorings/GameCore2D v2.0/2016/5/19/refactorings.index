@@ -1,0 +1,10 @@
+1462326122586	Rename type 'GameStateManager'
+1462326621504	Rename field 'states'
+1462327789452	Rename resource 'gamestate'
+1462399557394	Rename resource 'core'
+1462399596765	Move 'gamecore2d' to 'jeffrey_ryan'
+1462399620776	Move 'gamenode' to 'gamecore2d'
+1462399628011	Move 'input' to 'gamecore2d'
+1462399982827	Rename resource 'gamenode'
+1462474718740	Move compilation unit
+1462474737874	Move compilation unit

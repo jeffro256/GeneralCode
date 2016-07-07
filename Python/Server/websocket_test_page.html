@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>A cool test page</title>
+</head>
+<body>
+<input id="msgBox"/>
+<button onclick="sendMSG()">Send</button><br/>
+<button onclick="ws.close()">Disconnect</button>
+<p id="servertext"></p>
+<script>
+var ws = new WebSocket("ws://172.19.131.200:8080/websocket_test_page.html");
+
+window.onclose = function(evt) {
+    ws.close();
+}
+
+ws.onopen = function(evt) {
+    alert("Connection is open!");
+}
+
+ws.onmessage = function(evt) {
+    alert("Message received!");
+    
+    document.getElementById("servertext").innerHTML = evt.data;
+}
+
+ws.onclose = function(evt) {
+    alert("Connection closed.");
+}
+
+function sendMSG() {
+    ws.send(document.getElementById("msgBox").value);
+}
+</script>
+</body>
+</html>

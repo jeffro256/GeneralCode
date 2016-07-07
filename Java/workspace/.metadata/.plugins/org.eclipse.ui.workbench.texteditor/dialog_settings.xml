@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="pos" key="selection"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="pprops.pos"/>
+			<item value="ppros.pos"/>
+			<item value="add"/>
+			<item value="scenes.get"/>
+			<item value="scene.get"/>
+			<item value="GameListener"/>
+			<item value="Vector2Ddouble"/>
+			<item value="&gt;"/>
+		</list>
+		<list key="replacehistory">
+			<item value="pos"/>
+			<item value="pos."/>
+			<item value="Vector2D"/>
+			<item value=""/>
+			<item value="double"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="265" key="DIALOG_WIDTH"/>
+		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText-Regular" key="DIALOG_FONT_NAME"/>
+		<item value="399" key="DIALOG_HEIGHT"/>
+		<item value="816" key="DIALOG_X_ORIGIN"/>
+		<item value="57" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;jeffrey_ryan.game2d.ExtendedMouseListener&apos; to &apos;KeyAndMouseListener&apos;&#x0A;- Original project: &apos;2D Game Core 1.1&apos;&#x0A;- Original element: &apos;jeffrey_ryan.game2d.ExtendedMouseListener&apos;&#x0A;- Renamed element: &apos;jeffrey_ryan.game2d.KeyAndMouseListener&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ExtendedMouseListener&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;jeffrey_ryan.game2d{ExtendedMouseListener.java[ExtendedMouseListener" matchStrategy="1" name="KeyAndMouseListener" qualified="false" references="true" similarDeclarations="false" stamp="1441025119789" textual="false" version="1.0"/>
+</session>

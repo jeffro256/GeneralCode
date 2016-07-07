@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ "${#@}" -lt 2 ]; then
+    echo "Usage: timer (times) (command) (args...)"
+    exit
+fi
+
+start=`milli`
+for ((i=0;i<$1;i++)); do
+    "${@:2}"
+done
+end=`milli`
+
+runtime=$((end-start))
+echo $runtime
