@@ -127,14 +127,18 @@ int main() {
 	
 	printf("We got '%s'.\n\n", gpuProperties.deviceName);
 	
-	// CREATE LOGICAL DEVICE
-	
+	// CREATE SURFACE
+
+	// FIND GOOD QUEUE FAMILY
+
 	uint32_t familyCount;
-	VkQueueFamilyProperties* families;
-	
 	vkGetPhysicalDeviceQueueFamilyProperties(gpu, &familyCount, NULL);
-	families = malloc(sizeof(VkQueueFamilyProperties) * familyCount);
+	VkQueueFamilyProperties* families = malloc(sizeof(VkQueueFamilyProperties) * familyCount);
 	vkGetPhysicalDeviceQueueFamilyProperties(gpu, &familyCount, families);
+
+	
+
+	// CREATE LOGICAL DEVICE
 	
 	int familyIndex = -1;
 	

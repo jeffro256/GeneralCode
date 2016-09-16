@@ -79,7 +79,7 @@ public class AutoClicker extends JFrame implements ActionListener {
         
         while (true) {
             ac.click();
-            ac.bot.delay(50);
+            ac.bot.delay(200);
         }
     }
 }
