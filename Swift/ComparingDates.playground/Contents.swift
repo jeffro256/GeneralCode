@@ -41,3 +41,18 @@ now.timeIntervalSinceDayStart
 let com2 = DateComponents(hour: 8, minute: 34)
 let timeDate = Calendar.current.date(from: com2)
 timeDate?.timeIntervalSinceDayStart
+
+for i in 3...3 {
+    print("meep")
+}
+
+for i in 3..<3 {
+    print("moop")
+}
+
+// Causes Runtime Error
+/*
+for i in 4..<3 {
+    print("moop")
+}
+*/
