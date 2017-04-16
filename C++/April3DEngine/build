@@ -1,4 +1,0 @@
-cc -c external/lib/glad.c -I external/include/ && \
-cc -c src/shader_help.c -I external/include/ && \
-c++ src/main.cpp glad.o shader_help.o -I external/include $(pkg-config --cflags --libs glfw3) -o bin/test && \
-rm glad.o shader_help.o
