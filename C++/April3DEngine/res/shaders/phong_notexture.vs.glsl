@@ -5,12 +5,12 @@ uniform mat4 model_matrix;
 uniform mat4 normal_transform_matrix;
 
 in vec3 model_pos;
-in vec3 model_color;
 in vec3 model_normal;
+in vec3 model_color;
 
 out vec3 surface_pos;
-out vec3 surface_color;
 out vec3 surface_normal;
+out vec3 surface_color;
 
 void main() {
     gl_Position = view_projection_matrix * model_matrix * vec4(model_pos, 1.0);

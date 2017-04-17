@@ -1,6 +1,9 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <glm/vec3.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+
 #include "shader_help.h"
 
 #include <cstdlib>
@@ -23,11 +26,8 @@ static void glfw_framebuffer_size_callback(GLFWwindow* window, int width, int he
 	glViewport(0, 0, width, height);
 }
 
-static const GLfloat vert_info[] = {
-	 0.0,  0.8, 1.0, 0.0, 0.0,
-	 0.7, -0.4, 0.0, 1.0, 0.0,
-	-0.7, -0.4, 0.0, 0.0, 1.0,
-};
+static glm::vec3 camPos(2, 1.5, -1);
+static glm::vec3 lightPos(2, 2, 2);
 
 // Formattted like so: x, y, z, nx, ny, nz, r, g, b
 static const GLfloat cube_info[] = {
@@ -69,22 +69,6 @@ static const GLfloat cube_info[] = {
 	 1.0, -1.0,  1.0,  0.0, -1.0,  0.0, 0.027, 0.459, 1.000,
 };
 
-static const char* vshader_src = "#version 330 core\n"
-"in vec2 pos;\n"
-"in vec3 vcolor;\n"
-"out vec3 color;\n"
-"void main() {\n"
-"    gl_Position = vec4(pos, 0.0, 1.0);\n"
-"    color = vcolor;\n"
-"}\n";
-
-static const char* fshader_src = "#version 330 core\n"
-"in vec3 color;\n"
-"out vec3 fcolor;\n"
-"void main() {\n"
-"    fcolor = color;\n"
-"}\n";
-
 int main() {
 	GLFWwindow* window;
 
@@ -124,15 +108,52 @@ int main() {
 	GLuint vert_info_buffer;
 	glGenBuffers(1, &vert_info_buffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vert_info_buffer);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vert_info), vert_info, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(cube_info), cube_info, GL_STATIC_DRAW);
 
-	GLint sprogram = getProgram(vshader_src, fshader_src);
+	GLint sprogram = getProgramFromFiles("res/shaders/phong_notexture.vs.glsl",
+										 "res/shaders/phong_notexture.fs.glsl");
 
-	GLint vertex_location = glGetAttribLocation(sprogram, "pos");
-	GLint color_location = glGetAttribLocation(sprogram, "vcolor");
+	GLint viewproj_location = glGetAttribLocation(sprogram, "view_projection_matrix");
+	GLint model_location = glGetAttribLocation(sprogram, "model_matrix");
+	GLint normtrans_location = glGetAttribLocation(sprogram, "normal_transfrom_matrix");
+	GLint pos_location = glGetAttribLocation(sprogram, "model_pos");
+	GLint normal_location = glGetAttribLocation(sprogram, "model_normal");
+	GLint color_location = glGetAttribLocation(sprogram, "model_color");
 
-	if (vertex_location < 0) {
-		std::fputs("Could not get 'pos' location in shader program\n", stderr);
+	if (viewproj_location < 0) {
+		std::fputs("Could not get 'view_projection_matrix' location in shader program\n", stderr);
+		glDeleteBuffers(1, &vert_info_buffer);
+		glDeleteProgram(sprogram);
+		glfwTerminate();
+		return EXIT_FAILURE;
+	}
+
+	if (model_location < 0) {
+		std::fputs("Could not get 'model_matrix' location in shader program\n", stderr);
+		glDeleteBuffers(1, &vert_info_buffer);
+		glDeleteProgram(sprogram);
+		glfwTerminate();
+		return EXIT_FAILURE;
+	}
+
+	if (normtrans_location < 0) {
+		std::fputs("Could not get 'normal_transfrom_matrix' location in shader program\n", stderr);
+		glDeleteBuffers(1, &vert_info_buffer);
+		glDeleteProgram(sprogram);
+		glfwTerminate();
+		return EXIT_FAILURE;
+	}
+
+	if (pos_location < 0) {
+		std::fputs("Could not get 'model_pos' location in shader program\n", stderr);
+		glDeleteBuffers(1, &vert_info_buffer);
+		glDeleteProgram(sprogram);
+		glfwTerminate();
+		return EXIT_FAILURE;
+	}
+
+	if (normal_location < 0) {
+		std::fputs("Could not get 'model_normal' location in shader program\n", stderr);
 		glDeleteBuffers(1, &vert_info_buffer);
 		glDeleteProgram(sprogram);
 		glfwTerminate();
@@ -140,12 +161,14 @@ int main() {
 	}
 
 	if (color_location < 0) {
-		std::fputs("Could not get 'color' location in shader program\n", stderr);
+		std::fputs("Could not get 'model_color' location in shader program\n", stderr);
 		glDeleteBuffers(1, &vert_info_buffer);
 		glDeleteProgram(sprogram);
 		glfwTerminate();
 		return EXIT_FAILURE;
 	}
+
+
 
 	GLuint vao;
 	glGenVertexArrays(1, &vao);

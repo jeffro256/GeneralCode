@@ -5,8 +5,8 @@ uniform vec3 light_color;
 uniform vec3 camera_pos;
 
 in vec3 surface_pos;
-in vec3 surface_color;
 in vec3 surface_normal;
+in vec3 surface_color;
 
 out vec3 frag_color;
 
