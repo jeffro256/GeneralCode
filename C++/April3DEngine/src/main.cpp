@@ -27,26 +27,6 @@ static void glfw_framebuffer_size_callback(GLFWwindow* window, int width, int he
 	glViewport(0, 0, width, height);
 }
 
-/*
-static void printAllUniforms(GLint program) {
-	GLint count;
-	glGetProgramiv(program, GL_ACTIVE_UNIFORMS, &count);
-	std::printf("Active Uniforms: %d\n", count);
-
-	for (GLuint i = 0; i < count; i++) {
-		const GLsizei buffSize = 2014;
-		GLchar name[buffSize];
-		GLsizei length;
-		GLint size;
-		GLenum type;
-
-	    glGetActiveUniform(program, i, buffSize, &length, &size, &type, name);
-
-    	printf("Uniform #%d Type: %u Name: %s\n", i, type, name);
-	}
-}
-*/
-
 static glm::vec3 camPos(2.8, 1.5, 6);
 static glm::vec3 lightPos(2.4, 2, 4);
 static glm::mat4 view_projection_matrix;
