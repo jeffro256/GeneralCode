@@ -27,8 +27,29 @@ static void glfw_framebuffer_size_callback(GLFWwindow* window, int width, int he
 	glViewport(0, 0, width, height);
 }
 
-static glm::vec3 camPos(2, 1.5, -1);
-static glm::vec3 lightPos(2, 2, 2);
+/*
+static void printAllUniforms(GLint program) {
+	GLint count;
+	glGetProgramiv(program, GL_ACTIVE_UNIFORMS, &count);
+	std::printf("Active Uniforms: %d\n", count);
+
+	for (GLuint i = 0; i < count; i++) {
+		const GLsizei buffSize = 2014;
+		GLchar name[buffSize];
+		GLsizei length;
+		GLint size;
+		GLenum type;
+
+	    glGetActiveUniform(program, i, buffSize, &length, &size, &type, name);
+
+    	printf("Uniform #%d Type: %u Name: %s\n", i, type, name);
+	}
+}
+*/
+
+static glm::vec3 camPos(2.8, 1.5, 6);
+//static glm::vec3 camPos(3, 3, 3);
+static glm::vec3 lightPos(2.4, 2, 4);
 static glm::mat4 view_projection_matrix;
 static glm::mat4 model_matrix(1.0);
 static glm::mat4 normal_transfrom_matrix(1.0);
@@ -107,7 +128,10 @@ int main() {
 
 	printf("OpenGL Version (GLAD): %d.%d\n", GLVersion.major, GLVersion.minor);
 
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
 	glClearColor(0.25, 0.25, 0.25, 1.0);
+	glClearDepth(1.0);
 
 	GLuint vert_info_buffer;
 	glGenBuffers(1, &vert_info_buffer);
@@ -116,10 +140,24 @@ int main() {
 
 	GLint sprogram = getProgramFromFiles("res/shaders/phong_notexture.vs.glsl",
 										 "res/shaders/phong_notexture.fs.glsl");
+	
+	if (!sprogram) {
+		std::fputs("Could not make a GLSL shader program!\n", stderr);
+		glDeleteBuffers(1, &vert_info_buffer);
+		glfwTerminate();
+		return EXIT_FAILURE;
+	}
 
-	GLint viewproj_location = glGetAttribLocation(sprogram, "view_projection_matrix");
-	GLint model_location = glGetAttribLocation(sprogram, "model_matrix");
-	GLint normtrans_location = glGetAttribLocation(sprogram, "normal_transfrom_matrix");
+	glUseProgram(sprogram);
+
+	GLint viewproj_location = glGetUniformLocation(sprogram, "view_projection_matrix");
+	GLint model_location = glGetUniformLocation(sprogram, "model_matrix");
+	GLint normtrans_location = glGetUniformLocation(sprogram, "normal_transform_matrix");
+	
+	GLint lightpos_location = glGetUniformLocation(sprogram, "light_pos");
+	GLint lightcolor_location = glGetUniformLocation(sprogram, "light_color");
+	GLint campos_location = glGetUniformLocation(sprogram, "eye_pos");
+	
 	GLint pos_location = glGetAttribLocation(sprogram, "model_pos");
 	GLint normal_location = glGetAttribLocation(sprogram, "model_normal");
 	GLint color_location = glGetAttribLocation(sprogram, "model_color");
@@ -141,7 +179,31 @@ int main() {
 	}
 
 	if (normtrans_location < 0) {
-		std::fputs("Could not get 'normal_transfrom_matrix' location in shader program\n", stderr);
+		std::fputs("Could not get 'normal_transform_matrix' location in shader program\n", stderr);
+		glDeleteBuffers(1, &vert_info_buffer);
+		glDeleteProgram(sprogram);
+		glfwTerminate();
+		return EXIT_FAILURE;
+	}
+
+	if (lightpos_location < 0) {
+		std::fputs("Could not get 'light_pos' location in shader program\n", stderr);
+		glDeleteBuffers(1, &vert_info_buffer);
+		glDeleteProgram(sprogram);
+		glfwTerminate();
+		return EXIT_FAILURE;
+	}
+
+	if (lightcolor_location < 0) {
+		std::fputs("Could not get 'light_color' location in shader program\n", stderr);
+		glDeleteBuffers(1, &vert_info_buffer);
+		glDeleteProgram(sprogram);
+		glfwTerminate();
+		return EXIT_FAILURE;
+	}
+
+	if (campos_location < 0) {
+		std::fputs("Could not get 'camera_pos' location in shader program\n", stderr);
 		glDeleteBuffers(1, &vert_info_buffer);
 		glDeleteProgram(sprogram);
 		glfwTerminate();
@@ -172,16 +234,26 @@ int main() {
 		return EXIT_FAILURE;
 	}
 
-	glm::mat4 projection = glm::prespective(4.5, WINDOW_RATIO, 0.1, 100.0);
-	glm::mat4 view = glm::lookAt(camPos, glm::vec3(0.0, 0.0, 0.0, glm::vec3(0.0, 1.0, 0.0)));
+	glm::mat4 projection = glm::perspective(glm::radians(45.0f), WINDOW_RATIO, 0.1f, 100.0f);
+	glm::mat4 view = glm::lookAt(camPos, glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
 	view_projection_matrix = projection * view;
+
+	glUniformMatrix4fv(viewproj_location, 1, GL_FALSE, &view_projection_matrix[0][0]);
+	glUniformMatrix4fv(model_location, 1, GL_FALSE, &model_matrix[0][0]);
+	glUniformMatrix4fv(normtrans_location, 1, GL_FALSE, &normal_transfrom_matrix[0][0]);
+
+	glUniform3f(lightpos_location, lightPos.x, lightPos.y, lightPos.z);
+	glUniform3f(lightcolor_location, 1.0, 1.0, 1.0);
+	glUniform3f(campos_location, camPos.x, camPos.y, camPos.z);
 
 	GLuint vao;
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
-	glVertexAttribPointer(vertex_location, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, NULL);
-	glVertexAttribPointer(color_location, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (void*) (sizeof(GLfloat) * 2));
-	glEnableVertexAttribArray(vertex_location);
+	glVertexAttribPointer(pos_location, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 9, NULL);
+	glVertexAttribPointer(normal_location, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 9, (void*) (sizeof(GLfloat) * 3)); 
+	glVertexAttribPointer(color_location, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 9, (void*) (sizeof(GLfloat) * 6));
+	glEnableVertexAttribArray(pos_location);
+	glEnableVertexAttribArray(normal_location);
 	glEnableVertexAttribArray(color_location);
 
 	GLchar* validErrMsg;
@@ -198,9 +270,11 @@ int main() {
 
 	while (!glfwWindowShouldClose(window)) {
 		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_DEPTH_BUFFER_BIT);
 
 		glUseProgram(sprogram);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glBindVertexArray(vao);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
