@@ -48,7 +48,6 @@ static void printAllUniforms(GLint program) {
 */
 
 static glm::vec3 camPos(2.8, 1.5, 6);
-//static glm::vec3 camPos(3, 3, 3);
 static glm::vec3 lightPos(2.4, 2, 4);
 static glm::mat4 view_projection_matrix;
 static glm::mat4 model_matrix(1.0);
