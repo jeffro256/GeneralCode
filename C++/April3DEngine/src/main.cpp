@@ -13,6 +13,8 @@
 #define WINDOW_HEIGHT 480
 #define WINDOW_RATIO ((float) WINDOW_WIDTH / WINDOW_HEIGHT)
 
+#define LEN(a) sizeof(a) / sizeof(a[0])
+
 static void glfw_error_callback(int error, const char* description) {
 	std::fprintf(stderr, "Error (%d): %s\n", error, description);
 }
@@ -83,6 +85,7 @@ int main() {
 		return EXIT_FAILURE;
 	}
 
+	glfwWindowHint(GLFW_SAMPLES, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -109,6 +112,7 @@ int main() {
 
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
+	glEnable(GL_MULTISAMPLE);
 	glClearColor(0.25, 0.25, 0.25, 1.0);
 	glClearDepth(1.0);
 
@@ -127,96 +131,67 @@ int main() {
 		return EXIT_FAILURE;
 	}
 
-	glUseProgram(sprogram);
+	const char* uniform_names[] = {
+		"view_projection_matrix",
+		"model_matrix",
+		"normal_transform_matrix",
+		"light_pos",
+		"light_color",
+		"eye_pos"
+	};
+	const int num_uniforms = LEN(uniform_names);
+	GLint uniform_locations[num_uniforms];
+	int badLoc;
+	if ((badLoc = getMultipleUniformLocations(sprogram, num_uniforms, 
+											  uniform_names, uniform_locations)) != num_uniforms) {
+		std::fprintf(stderr, "Could not get uniform location of '%s'!\n", uniform_names[badLoc]);
+		glDeleteBuffers(1, &vert_info_buffer);
+		glDeleteProgram(sprogram);
+		glfwTerminate();
+		return EXIT_FAILURE;
+	}
+	for (int i = 0; i < num_uniforms; i++) {
+		if (uniform_locations[i] < 0) {
+			std::fprintf(stderr, "Could not get uniform location of '%s'!\n", uniform_names[i]);
+			glDeleteBuffers(1, &vert_info_buffer);
+			glDeleteProgram(sprogram);
+			glfwTerminate();
+			return EXIT_FAILURE;
+		}
+	}
 
-	GLint viewproj_location = glGetUniformLocation(sprogram, "view_projection_matrix");
-	GLint model_location = glGetUniformLocation(sprogram, "model_matrix");
-	GLint normtrans_location = glGetUniformLocation(sprogram, "normal_transform_matrix");
+	const char* attrib_names[] = {
+		"model_pos",
+		"model_normal",
+		"model_color"
+	};
+	const int num_attribs = LEN(attrib_names);
+	GLint attrib_locations[num_attribs];
+	if ((badLoc = getMultipleAttribLocations(sprogram, num_attribs, 
+												 attrib_names, attrib_locations)) != num_attribs) {
+		std::fprintf(stderr, "Could not get attribute location of '%s'!\n", attrib_names[badLoc]);
+		glDeleteBuffers(1, &vert_info_buffer);
+		glDeleteProgram(sprogram);
+		glfwTerminate();
+		return EXIT_FAILURE;
+	}
+
+	GLint viewproj_location		= uniform_locations[0];
+	GLint model_location		= uniform_locations[1];
+	GLint normtrans_location	= uniform_locations[2];
+	GLint lightpos_location		= uniform_locations[3];
+	GLint lightcolor_location	= uniform_locations[4];
+	GLint campos_location		= uniform_locations[5];
 	
-	GLint lightpos_location = glGetUniformLocation(sprogram, "light_pos");
-	GLint lightcolor_location = glGetUniformLocation(sprogram, "light_color");
-	GLint campos_location = glGetUniformLocation(sprogram, "eye_pos");
-	
-	GLint pos_location = glGetAttribLocation(sprogram, "model_pos");
-	GLint normal_location = glGetAttribLocation(sprogram, "model_normal");
-	GLint color_location = glGetAttribLocation(sprogram, "model_color");
-
-	if (viewproj_location < 0) {
-		std::fputs("Could not get 'view_projection_matrix' location in shader program\n", stderr);
-		glDeleteBuffers(1, &vert_info_buffer);
-		glDeleteProgram(sprogram);
-		glfwTerminate();
-		return EXIT_FAILURE;
-	}
-
-	if (model_location < 0) {
-		std::fputs("Could not get 'model_matrix' location in shader program\n", stderr);
-		glDeleteBuffers(1, &vert_info_buffer);
-		glDeleteProgram(sprogram);
-		glfwTerminate();
-		return EXIT_FAILURE;
-	}
-
-	if (normtrans_location < 0) {
-		std::fputs("Could not get 'normal_transform_matrix' location in shader program\n", stderr);
-		glDeleteBuffers(1, &vert_info_buffer);
-		glDeleteProgram(sprogram);
-		glfwTerminate();
-		return EXIT_FAILURE;
-	}
-
-	if (lightpos_location < 0) {
-		std::fputs("Could not get 'light_pos' location in shader program\n", stderr);
-		glDeleteBuffers(1, &vert_info_buffer);
-		glDeleteProgram(sprogram);
-		glfwTerminate();
-		return EXIT_FAILURE;
-	}
-
-	if (lightcolor_location < 0) {
-		std::fputs("Could not get 'light_color' location in shader program\n", stderr);
-		glDeleteBuffers(1, &vert_info_buffer);
-		glDeleteProgram(sprogram);
-		glfwTerminate();
-		return EXIT_FAILURE;
-	}
-
-	if (campos_location < 0) {
-		std::fputs("Could not get 'camera_pos' location in shader program\n", stderr);
-		glDeleteBuffers(1, &vert_info_buffer);
-		glDeleteProgram(sprogram);
-		glfwTerminate();
-		return EXIT_FAILURE;
-	}
-
-	if (pos_location < 0) {
-		std::fputs("Could not get 'model_pos' location in shader program\n", stderr);
-		glDeleteBuffers(1, &vert_info_buffer);
-		glDeleteProgram(sprogram);
-		glfwTerminate();
-		return EXIT_FAILURE;
-	}
-
-	if (normal_location < 0) {
-		std::fputs("Could not get 'model_normal' location in shader program\n", stderr);
-		glDeleteBuffers(1, &vert_info_buffer);
-		glDeleteProgram(sprogram);
-		glfwTerminate();
-		return EXIT_FAILURE;
-	}
-
-	if (color_location < 0) {
-		std::fputs("Could not get 'model_color' location in shader program\n", stderr);
-		glDeleteBuffers(1, &vert_info_buffer);
-		glDeleteProgram(sprogram);
-		glfwTerminate();
-		return EXIT_FAILURE;
-	}
+	GLint pos_location			= attrib_locations[0];
+	GLint normal_location		= attrib_locations[1];
+	GLint color_location		= attrib_locations[2];
 
 	glm::mat4 projection = glm::perspective(glm::radians(45.0f), WINDOW_RATIO, 0.1f, 100.0f);
 	glm::mat4 view = glm::lookAt(camPos, glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
 	view_projection_matrix = projection * view;
 
+	glUseProgram(sprogram);
 	glUniformMatrix4fv(viewproj_location, 1, GL_FALSE, &view_projection_matrix[0][0]);
 	glUniformMatrix4fv(model_location, 1, GL_FALSE, &model_matrix[0][0]);
 	glUniformMatrix4fv(normtrans_location, 1, GL_FALSE, &normal_transfrom_matrix[0][0]);
@@ -245,11 +220,10 @@ int main() {
 		glDeleteProgram(sprogram);
 		glfwTerminate();
 		return EXIT_FAILURE;
-	} 
+	}
 
 	while (!glfwWindowShouldClose(window)) {
-		glClear(GL_COLOR_BUFFER_BIT);
-		glClear(GL_DEPTH_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		glUseProgram(sprogram);
 		glBindVertexArray(vao);
