@@ -8,6 +8,7 @@
 
 #include <cstdlib>
 #include <cstdio>
+#include <ctime>
 
 #define WINDOW_WIDTH 640
 #define WINDOW_HEIGHT 480
@@ -223,6 +224,8 @@ int main() {
 	}
 
 	while (!glfwWindowShouldClose(window)) {
+		std::clock_t old_time = std::clock();
+		///////////////////////////////////////////////////
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		glUseProgram(sprogram);
@@ -231,7 +234,14 @@ int main() {
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
+		///////////////////////////////////////////////////
+		std::clock_t new_time = std::clock();
+		float elapsed = (float) (new_time - old_time) / CLOCKS_PER_SEC;
+		float fps = 1 / elapsed;
+		std::printf("FPS: %f\r", fps);
 	}
+
+	std::puts("");
 
 	glDeleteBuffers(1, &vert_info_buffer);
 	glDeleteVertexArrays(1, &vao);
