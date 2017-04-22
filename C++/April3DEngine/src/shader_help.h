@@ -13,8 +13,8 @@ GLuint getProgram(const char* vs, const char* fs);
 GLuint getProgramFromFiles(const char* vsFileName, const char* fsFileName);
 
 // returns index of first error, length of array if successful, but does all regardless
-int getMultipleAttribLocations(GLuint program, int numAttribs, char const* const* names, GLint* locations);
-int getMultipleUniformLocations(GLuint program, int numUniforms, char const* const* names, GLint* locations);
+int getMultipleAttribLocations(GLuint program, int numAttribs, const char* const* names, GLint* locations);
+int getMultipleUniformLocations(GLuint program, int numUniforms, const char* const* names, GLint* locations);
 
 #ifdef __cplusplus
 }

@@ -1,8 +1,8 @@
 EXECUTABLE=bin/April3DEngine
 LIB_FLAGS=$(shell pkg-config --libs glfw3)
 INC_FLAGS=-I external/include/ $(shell pkg-config --cflags glfw3)
-C_COMPILE=cc -c $< -o $@ $(INC_FLAGS)
-CPP_COMPILE=c++ -c $< -o $@ $(INC_FLAGS)
+C_COMPILE=cc -c -pedantic -Wall -Werror -std=c99 $< -o $@ $(INC_FLAGS)
+CPP_COMPILE=c++ -pedantic -Wall -Werror -std=c++11 -c $< -o $@ $(INC_FLAGS)
 
 all: $(EXECUTABLE)
 
@@ -20,3 +20,4 @@ build/glad.o: external/lib/glad.c external/include/glad/glad.h
 
 clean:
 	rm -f build/*.o
+	rm bin/April3DEngine

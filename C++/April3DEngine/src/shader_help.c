@@ -175,7 +175,7 @@ GLuint getProgramFromFiles(const char* vsFileName, const char* fsFileName) {
     return getProgram(vsSource, fsSource);
 }
 
-int getMultipleAttribLocations(GLuint program, int numAttribs, char const* const* names, GLint* locations) {
+int getMultipleAttribLocations(GLuint program, int numAttribs, const char* const* names, GLint* locations) {
     int badLoc = numAttribs;
 
     for (int i = 0; i < numAttribs; i++) {
@@ -191,7 +191,7 @@ int getMultipleAttribLocations(GLuint program, int numAttribs, char const* const
     return badLoc;
 }
 
-int getMultipleUniformLocations(GLuint program, int numUniforms, char const* const* names, GLint* locations) {
+int getMultipleUniformLocations(GLuint program, int numUniforms, const char* const* names, GLint* locations) {
     int badLoc = numUniforms;
 
     for (int i = 0; i < numUniforms; i++) {
