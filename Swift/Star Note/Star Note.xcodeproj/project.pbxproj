@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36885C411BB04BA600917DB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36885C401BB04BA600917DB5 /* AppDelegate.swift */; };
+		36885C431BB04BA600917DB5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36885C421BB04BA600917DB5 /* FirstViewController.swift */; };
+		36885C451BB04BA600917DB5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36885C441BB04BA600917DB5 /* SecondViewController.swift */; };
+		36885C481BB04BA600917DB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36885C461BB04BA600917DB5 /* Main.storyboard */; };
+		36885C4A1BB04BA600917DB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36885C491BB04BA600917DB5 /* Assets.xcassets */; };
+		36885C581BB04BA700917DB5 /* Star_NoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36885C571BB04BA700917DB5 /* Star_NoteTests.swift */; };
+		36885C631BB04BA700917DB5 /* Star_NoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36885C621BB04BA700917DB5 /* Star_NoteUITests.swift */; };
+		36885C711BB0544200917DB5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36885C701BB0544200917DB5 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36885C541BB04BA700917DB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36885C351BB04BA600917DB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36885C3C1BB04BA600917DB5;
+			remoteInfo = "Star Note";
+		};
+		36885C5F1BB04BA700917DB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36885C351BB04BA600917DB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36885C3C1BB04BA600917DB5;
+			remoteInfo = "Star Note";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		36885C3D1BB04BA600917DB5 /* Star Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36885C401BB04BA600917DB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		36885C421BB04BA600917DB5 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		36885C441BB04BA600917DB5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		36885C471BB04BA600917DB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		36885C491BB04BA600917DB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		36885C4E1BB04BA600917DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36885C531BB04BA700917DB5 /* Star NoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Star NoteTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36885C571BB04BA700917DB5 /* Star_NoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_NoteTests.swift; sourceTree = "<group>"; };
+		36885C591BB04BA700917DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36885C5E1BB04BA700917DB5 /* Star NoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Star NoteUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36885C621BB04BA700917DB5 /* Star_NoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_NoteUITests.swift; sourceTree = "<group>"; };
+		36885C641BB04BA700917DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36885C701BB0544200917DB5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36885C3A1BB04BA600917DB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36885C501BB04BA700917DB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36885C5B1BB04BA700917DB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		36885C341BB04BA600917DB5 = {
+			isa = PBXGroup;
+			children = (
+				36885C3F1BB04BA600917DB5 /* Star Note */,
+				36885C561BB04BA700917DB5 /* Star NoteTests */,
+				36885C611BB04BA700917DB5 /* Star NoteUITests */,
+				36885C3E1BB04BA600917DB5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36885C3E1BB04BA600917DB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36885C3D1BB04BA600917DB5 /* Star Note.app */,
+				36885C531BB04BA700917DB5 /* Star NoteTests.xctest */,
+				36885C5E1BB04BA700917DB5 /* Star NoteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36885C3F1BB04BA600917DB5 /* Star Note */ = {
+			isa = PBXGroup;
+			children = (
+				36885C401BB04BA600917DB5 /* AppDelegate.swift */,
+				36885C421BB04BA600917DB5 /* FirstViewController.swift */,
+				36885C441BB04BA600917DB5 /* SecondViewController.swift */,
+				36885C461BB04BA600917DB5 /* Main.storyboard */,
+				36885C491BB04BA600917DB5 /* Assets.xcassets */,
+				36885C701BB0544200917DB5 /* Launch Screen.storyboard */,
+				36885C4E1BB04BA600917DB5 /* Info.plist */,
+			);
+			path = "Star Note";
+			sourceTree = "<group>";
+		};
+		36885C561BB04BA700917DB5 /* Star NoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				36885C571BB04BA700917DB5 /* Star_NoteTests.swift */,
+				36885C591BB04BA700917DB5 /* Info.plist */,
+			);
+			path = "Star NoteTests";
+			sourceTree = "<group>";
+		};
+		36885C611BB04BA700917DB5 /* Star NoteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				36885C621BB04BA700917DB5 /* Star_NoteUITests.swift */,
+				36885C641BB04BA700917DB5 /* Info.plist */,
+			);
+			path = "Star NoteUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36885C3C1BB04BA600917DB5 /* Star Note */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36885C671BB04BA700917DB5 /* Build configuration list for PBXNativeTarget "Star Note" */;
+			buildPhases = (
+				36885C391BB04BA600917DB5 /* Sources */,
+				36885C3A1BB04BA600917DB5 /* Frameworks */,
+				36885C3B1BB04BA600917DB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Star Note";
+			productName = "Star Note";
+			productReference = 36885C3D1BB04BA600917DB5 /* Star Note.app */;
+			productType = "com.apple.product-type.application";
+		};
+		36885C521BB04BA700917DB5 /* Star NoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36885C6A1BB04BA700917DB5 /* Build configuration list for PBXNativeTarget "Star NoteTests" */;
+			buildPhases = (
+				36885C4F1BB04BA700917DB5 /* Sources */,
+				36885C501BB04BA700917DB5 /* Frameworks */,
+				36885C511BB04BA700917DB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36885C551BB04BA700917DB5 /* PBXTargetDependency */,
+			);
+			name = "Star NoteTests";
+			productName = "Star NoteTests";
+			productReference = 36885C531BB04BA700917DB5 /* Star NoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		36885C5D1BB04BA700917DB5 /* Star NoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36885C6D1BB04BA700917DB5 /* Build configuration list for PBXNativeTarget "Star NoteUITests" */;
+			buildPhases = (
+				36885C5A1BB04BA700917DB5 /* Sources */,
+				36885C5B1BB04BA700917DB5 /* Frameworks */,
+				36885C5C1BB04BA700917DB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36885C601BB04BA700917DB5 /* PBXTargetDependency */,
+			);
+			name = "Star NoteUITests";
+			productName = "Star NoteUITests";
+			productReference = 36885C5E1BB04BA700917DB5 /* Star NoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		36885C351BB04BA600917DB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Star Note";
+				TargetAttributes = {
+					36885C3C1BB04BA600917DB5 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					36885C521BB04BA700917DB5 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 36885C3C1BB04BA600917DB5;
+					};
+					36885C5D1BB04BA700917DB5 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 36885C3C1BB04BA600917DB5;
+					};
+				};
+			};
+			buildConfigurationList = 36885C381BB04BA600917DB5 /* Build configuration list for PBXProject "Star Note" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 36885C341BB04BA600917DB5;
+			productRefGroup = 36885C3E1BB04BA600917DB5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36885C3C1BB04BA600917DB5 /* Star Note */,
+				36885C521BB04BA700917DB5 /* Star NoteTests */,
+				36885C5D1BB04BA700917DB5 /* Star NoteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36885C3B1BB04BA600917DB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36885C4A1BB04BA600917DB5 /* Assets.xcassets in Resources */,
+				36885C711BB0544200917DB5 /* Launch Screen.storyboard in Resources */,
+				36885C481BB04BA600917DB5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36885C511BB04BA700917DB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36885C5C1BB04BA700917DB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36885C391BB04BA600917DB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36885C451BB04BA600917DB5 /* SecondViewController.swift in Sources */,
+				36885C411BB04BA600917DB5 /* AppDelegate.swift in Sources */,
+				36885C431BB04BA600917DB5 /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36885C4F1BB04BA700917DB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36885C581BB04BA700917DB5 /* Star_NoteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36885C5A1BB04BA700917DB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36885C631BB04BA700917DB5 /* Star_NoteUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36885C551BB04BA700917DB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36885C3C1BB04BA600917DB5 /* Star Note */;
+			targetProxy = 36885C541BB04BA700917DB5 /* PBXContainerItemProxy */;
+		};
+		36885C601BB04BA700917DB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36885C3C1BB04BA600917DB5 /* Star Note */;
+			targetProxy = 36885C5F1BB04BA700917DB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		36885C461BB04BA600917DB5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36885C471BB04BA600917DB5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		36885C651BB04BA700917DB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		36885C661BB04BA700917DB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		36885C681BB04BA700917DB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Star Note/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.star-note.Star-Note";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		36885C691BB04BA700917DB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Star Note/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.star-note.Star-Note";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		36885C6B1BB04BA700917DB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Star NoteTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.star-note.Star-NoteTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Star Note.app/Star Note";
+			};
+			name = Debug;
+		};
+		36885C6C1BB04BA700917DB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Star NoteTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.star-note.Star-NoteTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Star Note.app/Star Note";
+			};
+			name = Release;
+		};
+		36885C6E1BB04BA700917DB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Star NoteUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.star-note.Star-NoteUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Star Note";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		36885C6F1BB04BA700917DB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Star NoteUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.star-note.Star-NoteUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Star Note";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36885C381BB04BA600917DB5 /* Build configuration list for PBXProject "Star Note" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36885C651BB04BA700917DB5 /* Debug */,
+				36885C661BB04BA700917DB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36885C671BB04BA700917DB5 /* Build configuration list for PBXNativeTarget "Star Note" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36885C681BB04BA700917DB5 /* Debug */,
+				36885C691BB04BA700917DB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		36885C6A1BB04BA700917DB5 /* Build configuration list for PBXNativeTarget "Star NoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36885C6B1BB04BA700917DB5 /* Debug */,
+				36885C6C1BB04BA700917DB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		36885C6D1BB04BA700917DB5 /* Build configuration list for PBXNativeTarget "Star NoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36885C6E1BB04BA700917DB5 /* Debug */,
+				36885C6F1BB04BA700917DB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 36885C351BB04BA600917DB5 /* Project object */;
+}

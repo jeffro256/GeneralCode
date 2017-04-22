@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" nextobjectid="19">
+ <tileset firstgid="1" name="base" tilewidth="32" tileheight="32" spacing="2">
+  <image source="alpha.atlasc/alpha.1.png" width="170" height="34"/>
+ </tileset>
+ <tileset firstgid="6" name="characters" tilewidth="32" tileheight="32" spacing="2">
+  <image source="my_characters.atlasc/my_characters.1.png" trans="ff00ff" width="34" height="34"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzl190OgCAIBWB/4v1fubV14RwachBqXZx1Y/tEZKuSUioByT/OccfTkkTz/qqhSZ1kp4euWTW1e+R6QA594TJyd9+Tt9Ub5SJ3su8RN2fUpF/H7cVqVjlXGsRHXOTsn9zZPCGzpq0XnW8KshHXyvyqKz13z3qzwrX+juDc3q7N08qXuF73SupqZ3dk7q7Xy434J7tyAhcrDJA=
+  </data>
+ </layer>
+ <objectgroup name="characters"/>
+</map>

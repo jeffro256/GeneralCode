@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="32" tileheight="32" nextobjectid="66">
+ <tileset firstgid="1" name="Base" tilewidth="32" tileheight="32" spacing="2">
+  <image source="alpha.atlasc/alpha.1.png" trans="ff00ff" width="170" height="34"/>
+  <tile id="2">
+   <properties>
+    <property name="hitbox" value="full"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="hitbox" value="full"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="60" height="60">
+  <data encoding="base64" compression="zlib">
+   eJztm9kOgzAMBCnH//9yhdSHykpI7KyPBD+MKrWCeLIuJUD3bdv2F/FJkiQhnD8sxuCMc5LX0bpPANJxRrcZ3ZeWs3SeEOOjPVtjcrfTrE/T2buOJKFkXyZJTK4ANdxIjxHc7aL4Rs931mN25huTI6ivVp8fIOdRX7rW1s541Bnha7kWOghevlp+rX1T/6d5uApo1ubJvx/SOSrU66q8vwIlJytf656v9eyq+dZ8at/l2f1bvr39MAtc39Zn0ZH6WvX40/0TlGtPhqXfa+usOHPRqpFbv8cxjZNxT37SOmb1ldYd1VczYyvfKD2tkREiY29fSxC+kde4me97fHtc3ui7yjWsXo8VMuY4aJ0Pj1431qwf7UsdNb0ltSN9n7y0s/bylc6HlSvKt9ejdk8EORe13w1r19650Mx3JAvv/kT7RgB5TmO1Bo7y/KzF9Tf6fL43Fr6l/yJ4e1tknJT5AsOGMzA=
+  </data>
+ </layer>
+ <objectgroup name="Enemies">
+  <object id="19" name="Enemy" x="1215.31" y="547.945"/>
+  <object id="20" name="Enemy" x="871.092" y="695.469"/>
+  <object id="21" name="Enemy" x="432.034" y="526.87"/>
+  <object id="22" name="Enemy" x="312.61" y="955.392"/>
+  <object id="23" name="Enemy" x="245.873" y="1419.04"/>
+  <object id="24" name="Enemy" x="561.995" y="1457.67"/>
+  <object id="25" name="Enemy" x="323.147" y="1808.92"/>
+  <object id="26" name="Enemy" x="994.029" y="1531.44"/>
+  <object id="28" name="Enemy" x="1731.65" y="1345.28"/>
+  <object id="29" name="Enemy" x="1296.1" y="1064.28"/>
+  <object id="30" name="Enemy" x="969.442" y="790.306"/>
+  <object id="31" name="Enemy" x="161.574" y="354.759"/>
+  <object id="32" name="Enemy" x="238.848" y="98.3491"/>
+  <object id="33" name="Enemy" x="695.469" y="144.011"/>
+  <object id="34" name="Enemy" x="1120.48" y="140.499"/>
+  <object id="35" name="Enemy" x="1436.6" y="154.549"/>
+  <object id="36" name="Enemy" x="1731.65" y="151.036"/>
+  <object id="37" name="Enemy" x="1404.99" y="477.696"/>
+  <object id="38" name="Enemy" x="1745.7" y="909.73"/>
+  <object id="39" name="Enemy" x="1355.81" y="730.594"/>
+  <object id="40" name="Enemy" x="540.92" y="1246.93"/>
+  <object id="41" name="Enemy" x="804.355" y="1176.68"/>
+  <object id="42" name="Enemy" x="98.3491" y="885.142"/>
+  <object id="43" name="Enemy" x="119.424" y="1482.26"/>
+  <object id="44" name="Enemy" x="579.557" y="1784.33"/>
+  <object id="46" name="Enemy" x="1022.13" y="1394.45"/>
+  <object id="47" name="Enemy" x="1025.64" y="547.945"/>
+  <object id="48" name="Enemy" x="748.156" y="330.172"/>
+  <object id="49" name="Enemy" x="375.834" y="302.072"/>
+  <object id="50" name="Enemy" x="1215.31" y="323.147"/>
+  <object id="51" name="Enemy" x="1640.32" y="393.397"/>
+  <object id="54" name="Enemy" x="1649.35" y="683.983"/>
+  <object id="56" name="Enemy" x="1316.02" y="1489.18"/>
+  <object id="58" name="Enemy" x="705.628" y="597.403"/>
+ </objectgroup>
+ <objectgroup name="Players">
+  <object id="65" name="Player" x="1742.46" y="1778.48">
+   <ellipse/>
+  </object>
+ </objectgroup>
+</map>

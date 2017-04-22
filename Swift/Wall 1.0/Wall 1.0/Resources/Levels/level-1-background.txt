@@ -1,0 +1,31 @@
+scenery
+32x32
+x wall
+o grass1
+= stone
+w water1
+end
+x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+x o o o o o o o o o o o o o o o o o w w w w w w w w w w w w w x
+x o o o o o o o o o o o o o o o o o o w w w w w w w w w w w w x
+x o o o o o o o o o o o o o o o o o o o w w w w w w w w w w w x
+x o o o o o o o o o o o o o o o o o o o o w w w w w w w w w w x
+x o o o o o o o o o o o o o o o o o o o o w w w w w w w w w w x
+x o o o o o o o o o o o o o o o o o o o o o w w w w w w w w w x
+x o o o o o o o o o o o o o o o o o o o o o w w w w w w w w w x
+x o o o o o o o o o o o o o o o o o o o o o o w w w w w w w w x
+x o o o o o o o o o o o o o o o o o o o o o o o o w w w w w w x
+x = = = = = = o o o o o o o o o o o o o o o o o o o o w w w w x
+x = = = = = = o o o o o o o o o o o o o o o o o o o o o o o o x
+x = = = = = = o o o o o o o o o o o o o o o o o o o o o o o o x
+x = = = = = = o o o o o o o o o o o o o o o o o o o o o o o o x
+x = = = = = = = = = = = = = = x o o o o o o o o o o o o o o o x
+x = = = = = = = = = = = = = = x o o o o o o o o o o o o o o o x
+x = = = = = = = = = = = = = = x o o o o o o o o o o o o o o o x
+x = = = = = = = = = = x x x x x o o o o o o o o o o o o o o o x
+x x x x x x x x x x x x o o o o o o o o o o o o o o o o o o o x
+x o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o x
+x o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o x
+x o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o x
+x o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o x
+x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x

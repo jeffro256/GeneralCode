@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="Base" tilewidth="32" tileheight="32" spacing="2">
+  <image source="alpha.atlasc/alpha.1.png" trans="ff00ff" width="170" height="34"/>
+ </tileset>
+ <layer name="Base" width="60" height="60">
+  <data encoding="base64" compression="zlib">
+   eJztm9kOgzAMBCnH//9yhdSHykpI7KyPBD+MKrWCeLIuJUD3bdv2F/FJkiQhnD8sxuCMc5LX0bpPANJxRrcZ3ZeWs3SeEOOjPVtjcrfTrE/T2buOJKFkXyZJTK4ANdxIjxHc7aL4Rs931mN25huTI6ivVp8fIOdRX7rW1s541Bnha7kWOghevlp+rX1T/6d5uApo1ubJvx/SOSrU66q8vwIlJytf656v9eyq+dZ8at/l2f1bvr39MAtc39Zn0ZH6WvX40/0TlGtPhqXfa+usOHPRqpFbv8cxjZNxT37SOmb1ldYd1VczYyvfKD2tkREiY29fSxC+kde4me97fHtc3ui7yjWsXo8VMuY4aJ0Pj1431qwf7UsdNb0ltSN9n7y0s/bylc6HlSvKt9ejdk8EORe13w1r19650Mx3JAvv/kT7RgB5TmO1Bo7y/KzF9Tf6fL43Fr6l/yJ4e1tknJT5AsOGMzA=
+  </data>
+ </layer>
+</map>

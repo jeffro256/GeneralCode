@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36247BBD1AC2DC510014158B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36247BBC1AC2DC510014158B /* AppDelegate.swift */; };
+		36247BC11AC2DC510014158B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36247BC01AC2DC510014158B /* GameScene.swift */; };
+		36247BC31AC2DC510014158B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36247BC21AC2DC510014158B /* GameViewController.swift */; };
+		36247BC61AC2DC510014158B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36247BC41AC2DC510014158B /* Main.storyboard */; };
+		36247BC81AC2DC510014158B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36247BC71AC2DC510014158B /* Images.xcassets */; };
+		36247BCB1AC2DC510014158B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36247BC91AC2DC510014158B /* LaunchScreen.xib */; };
+		36247BD71AC2DC510014158B /* JSTileMapTest2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36247BD61AC2DC510014158B /* JSTileMapTest2Tests.swift */; };
+		36247BE61AC2DCE50014158B /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 36247BE21AC2DCE50014158B /* JSTileMap.m */; };
+		36247BE71AC2DCE50014158B /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36247BE41AC2DCE50014158B /* LFCGzipUtility.m */; };
+		36247BE81AC2DCE50014158B /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36247BE51AC2DCE50014158B /* LICENSE.txt */; };
+		36247BEA1AC2DCF30014158B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36247BE91AC2DCF30014158B /* libz.dylib */; };
+		36247C011AC36B6A0014158B /* maps in Resources */ = {isa = PBXBuildFile; fileRef = 36247C001AC36B6A0014158B /* maps */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36247BD11AC2DC510014158B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36247BAF1AC2DC510014158B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36247BB61AC2DC510014158B;
+			remoteInfo = JSTileMapTest2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		36247BB71AC2DC510014158B /* JSTileMapTest2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTileMapTest2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36247BBB1AC2DC510014158B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36247BBC1AC2DC510014158B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		36247BC01AC2DC510014158B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		36247BC21AC2DC510014158B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		36247BC51AC2DC510014158B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		36247BC71AC2DC510014158B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		36247BCA1AC2DC510014158B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		36247BD01AC2DC510014158B /* JSTileMapTest2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSTileMapTest2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36247BD51AC2DC510014158B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36247BD61AC2DC510014158B /* JSTileMapTest2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTileMapTest2Tests.swift; sourceTree = "<group>"; };
+		36247BE11AC2DCE50014158B /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
+		36247BE21AC2DCE50014158B /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTileMap.m; sourceTree = "<group>"; };
+		36247BE31AC2DCE50014158B /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCGzipUtility.h; sourceTree = "<group>"; };
+		36247BE41AC2DCE50014158B /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCGzipUtility.m; sourceTree = "<group>"; };
+		36247BE51AC2DCE50014158B /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		36247BE91AC2DCF30014158B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		36247BEB1AC2DD110014158B /* JSTileMap-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSTileMap-Bridge.h"; sourceTree = SOURCE_ROOT; };
+		36247C001AC36B6A0014158B /* maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = maps; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36247BB41AC2DC510014158B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36247BEA1AC2DCF30014158B /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36247BCD1AC2DC510014158B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		36247BAE1AC2DC510014158B = {
+			isa = PBXGroup;
+			children = (
+				36247BE91AC2DCF30014158B /* libz.dylib */,
+				36247BB91AC2DC510014158B /* JSTileMapTest2 */,
+				36247BD31AC2DC510014158B /* JSTileMapTest2Tests */,
+				36247BB81AC2DC510014158B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36247BB81AC2DC510014158B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36247BB71AC2DC510014158B /* JSTileMapTest2.app */,
+				36247BD01AC2DC510014158B /* JSTileMapTest2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36247BB91AC2DC510014158B /* JSTileMapTest2 */ = {
+			isa = PBXGroup;
+			children = (
+				36247C001AC36B6A0014158B /* maps */,
+				36247BE01AC2DCE50014158B /* JSTileMap */,
+				36247BBC1AC2DC510014158B /* AppDelegate.swift */,
+				36247BC01AC2DC510014158B /* GameScene.swift */,
+				36247BC21AC2DC510014158B /* GameViewController.swift */,
+				36247BEB1AC2DD110014158B /* JSTileMap-Bridge.h */,
+				36247BC41AC2DC510014158B /* Main.storyboard */,
+				36247BC71AC2DC510014158B /* Images.xcassets */,
+				36247BC91AC2DC510014158B /* LaunchScreen.xib */,
+				36247BBA1AC2DC510014158B /* Supporting Files */,
+			);
+			path = JSTileMapTest2;
+			sourceTree = "<group>";
+		};
+		36247BBA1AC2DC510014158B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36247BBB1AC2DC510014158B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36247BD31AC2DC510014158B /* JSTileMapTest2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				36247BD61AC2DC510014158B /* JSTileMapTest2Tests.swift */,
+				36247BD41AC2DC510014158B /* Supporting Files */,
+			);
+			path = JSTileMapTest2Tests;
+			sourceTree = "<group>";
+		};
+		36247BD41AC2DC510014158B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36247BD51AC2DC510014158B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36247BE01AC2DCE50014158B /* JSTileMap */ = {
+			isa = PBXGroup;
+			children = (
+				36247BE11AC2DCE50014158B /* JSTileMap.h */,
+				36247BE21AC2DCE50014158B /* JSTileMap.m */,
+				36247BE31AC2DCE50014158B /* LFCGzipUtility.h */,
+				36247BE41AC2DCE50014158B /* LFCGzipUtility.m */,
+				36247BE51AC2DCE50014158B /* LICENSE.txt */,
+			);
+			path = JSTileMap;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36247BB61AC2DC510014158B /* JSTileMapTest2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36247BDA1AC2DC510014158B /* Build configuration list for PBXNativeTarget "JSTileMapTest2" */;
+			buildPhases = (
+				36247BB31AC2DC510014158B /* Sources */,
+				36247BB41AC2DC510014158B /* Frameworks */,
+				36247BB51AC2DC510014158B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSTileMapTest2;
+			productName = JSTileMapTest2;
+			productReference = 36247BB71AC2DC510014158B /* JSTileMapTest2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		36247BCF1AC2DC510014158B /* JSTileMapTest2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36247BDD1AC2DC510014158B /* Build configuration list for PBXNativeTarget "JSTileMapTest2Tests" */;
+			buildPhases = (
+				36247BCC1AC2DC510014158B /* Sources */,
+				36247BCD1AC2DC510014158B /* Frameworks */,
+				36247BCE1AC2DC510014158B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36247BD21AC2DC510014158B /* PBXTargetDependency */,
+			);
+			name = JSTileMapTest2Tests;
+			productName = JSTileMapTest2Tests;
+			productReference = 36247BD01AC2DC510014158B /* JSTileMapTest2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		36247BAF1AC2DC510014158B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Fish in Space";
+				TargetAttributes = {
+					36247BB61AC2DC510014158B = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					36247BCF1AC2DC510014158B = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 36247BB61AC2DC510014158B;
+					};
+				};
+			};
+			buildConfigurationList = 36247BB21AC2DC510014158B /* Build configuration list for PBXProject "JSTileMapTest2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 36247BAE1AC2DC510014158B;
+			productRefGroup = 36247BB81AC2DC510014158B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36247BB61AC2DC510014158B /* JSTileMapTest2 */,
+				36247BCF1AC2DC510014158B /* JSTileMapTest2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36247BB51AC2DC510014158B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36247BE81AC2DCE50014158B /* LICENSE.txt in Resources */,
+				36247BCB1AC2DC510014158B /* LaunchScreen.xib in Resources */,
+				36247BC81AC2DC510014158B /* Images.xcassets in Resources */,
+				36247C011AC36B6A0014158B /* maps in Resources */,
+				36247BC61AC2DC510014158B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36247BCE1AC2DC510014158B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36247BB31AC2DC510014158B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36247BC11AC2DC510014158B /* GameScene.swift in Sources */,
+				36247BE71AC2DCE50014158B /* LFCGzipUtility.m in Sources */,
+				36247BC31AC2DC510014158B /* GameViewController.swift in Sources */,
+				36247BBD1AC2DC510014158B /* AppDelegate.swift in Sources */,
+				36247BE61AC2DCE50014158B /* JSTileMap.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36247BCC1AC2DC510014158B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36247BD71AC2DC510014158B /* JSTileMapTest2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36247BD21AC2DC510014158B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36247BB61AC2DC510014158B /* JSTileMapTest2 */;
+			targetProxy = 36247BD11AC2DC510014158B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		36247BC41AC2DC510014158B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36247BC51AC2DC510014158B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		36247BC91AC2DC510014158B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36247BCA1AC2DC510014158B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		36247BD81AC2DC510014158B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		36247BD91AC2DC510014158B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		36247BDB1AC2DC510014158B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JSTileMapTest2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JSTileMap-Bridge.h";
+			};
+			name = Debug;
+		};
+		36247BDC1AC2DC510014158B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JSTileMapTest2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JSTileMap-Bridge.h";
+			};
+			name = Release;
+		};
+		36247BDE1AC2DC510014158B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JSTileMapTest2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSTileMapTest2.app/JSTileMapTest2";
+			};
+			name = Debug;
+		};
+		36247BDF1AC2DC510014158B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JSTileMapTest2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSTileMapTest2.app/JSTileMapTest2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36247BB21AC2DC510014158B /* Build configuration list for PBXProject "JSTileMapTest2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36247BD81AC2DC510014158B /* Debug */,
+				36247BD91AC2DC510014158B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36247BDA1AC2DC510014158B /* Build configuration list for PBXNativeTarget "JSTileMapTest2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36247BDB1AC2DC510014158B /* Debug */,
+				36247BDC1AC2DC510014158B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		36247BDD1AC2DC510014158B /* Build configuration list for PBXNativeTarget "JSTileMapTest2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36247BDE1AC2DC510014158B /* Debug */,
+				36247BDF1AC2DC510014158B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 36247BAF1AC2DC510014158B /* Project object */;
+}
