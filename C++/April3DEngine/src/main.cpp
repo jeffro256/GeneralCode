@@ -102,7 +102,7 @@ int main() {
 	glfwSetKeyCallback(window, glfw_key_callback);
 	glfwSetFramebufferSizeCallback(window, glfw_framebuffer_size_callback);
 	glfwMakeContextCurrent(window);
-	
+
 	if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)) {
 		std::fputs("GLAD failed to load OpenGL\n", stderr);
 		glfwTerminate();
