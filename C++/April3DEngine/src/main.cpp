@@ -33,8 +33,8 @@ static void glfw_framebuffer_size_callback(GLFWwindow* window, int width, int he
 static glm::vec3 camPos(2.8, 1.5, 6);
 static glm::vec3 lightPos(2.4, 2, 4);
 static glm::mat4 view_projection_matrix;
-static glm::mat4 model_matrix(1.0);
-static glm::mat4 normal_transfrom_matrix(1.0);
+static glm::mat4 model_matrix;
+static glm::mat4 normal_transfrom_matrix;
 
 // Formattted like so: x, y, z, nx, ny, nz, r, g, b
 static const GLfloat cube_info[] = {
@@ -223,8 +223,9 @@ int main() {
 		return EXIT_FAILURE;
 	}
 
+	std::clock_t new_time = std::clock();
 	while (!glfwWindowShouldClose(window)) {
-		std::clock_t old_time = std::clock();
+		std::clock_t old_time = new_time;
 		///////////////////////////////////////////////////
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -235,7 +236,7 @@ int main() {
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 		///////////////////////////////////////////////////
-		std::clock_t new_time = std::clock();
+		new_time = std::clock();
 		float elapsed = (float) (new_time - old_time) / CLOCKS_PER_SEC;
 		float fps = 1 / elapsed;
 		std::printf("FPS: %f\r", fps);
