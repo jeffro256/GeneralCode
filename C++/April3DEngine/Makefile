@@ -6,10 +6,10 @@ CPP_COMPILE=c++ -pedantic -Wall -Werror -std=c++11 -c $< -o $@ $(INC_FLAGS)
 
 all: $(EXECUTABLE)
 
-$(EXECUTABLE): build/main.o build/shader_help.o build/glad.o 
+$(EXECUTABLE): build/main.o build/shader_help.o build/glad.o
 	c++ $^ -o $@ $(LIB_FLAGS)
 
-build/main.o: src/main.cpp src/shader_help.h external/include/glad/glad.h
+build/main.o: src/main.cpp src/shader_help.h external/include/glad/glad.h src/Stopwatch.hpp src/Stopwatch.inl
 	$(CPP_COMPILE)
 
 build/shader_help.o: src/shader_help.c src/shader_help.h external/include/glad/glad.h

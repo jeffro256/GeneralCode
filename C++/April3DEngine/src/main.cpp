@@ -5,10 +5,15 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "shader_help.h"
+#include "Stopwatch.hpp"
 
 #include <cstdlib>
 #include <cstdio>
 #include <ctime>
+
+//remove
+#include <iostream>
+#include <chrono>
 
 #define WINDOW_WIDTH 640
 #define WINDOW_HEIGHT 480
@@ -77,6 +82,9 @@ static const GLfloat cube_info[] = {
 };
 
 int main() {
+	Stopwatch<> stopwatch;
+	stopwatch.start();
+
 	GLFWwindow* window;
 
 	glfwSetErrorCallback(glfw_error_callback);
@@ -223,10 +231,7 @@ int main() {
 		return EXIT_FAILURE;
 	}
 
-	std::clock_t new_time = std::clock();
 	while (!glfwWindowShouldClose(window)) {
-		std::clock_t old_time = new_time;
-		///////////////////////////////////////////////////
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		glUseProgram(sprogram);
@@ -236,13 +241,14 @@ int main() {
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 		///////////////////////////////////////////////////
-		new_time = std::clock();
-		float elapsed = (float) (new_time - old_time) / CLOCKS_PER_SEC;
-		float fps = 1 / elapsed;
-		std::printf("FPS: %f\r", fps);
+		double elapsed = stopwatch.lap();
+		double fps = 1 / elapsed;
+		//std::printf("elapsed: %lf\n", elapsed);
+		std::printf("FPS: %lf\n", fps);
 	}
 
-	std::puts("");
+	stopwatch.stop();
+	std::printf("\nTotal Time: %lf\n", stopwatch.totalTime());
 
 	glDeleteBuffers(1, &vert_info_buffer);
 	glDeleteVertexArrays(1, &vao);
