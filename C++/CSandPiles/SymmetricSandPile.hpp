@@ -10,14 +10,9 @@ Change width and height to size_t and pass grid as pointer to vector without
 copying
 */
 
-class SymmetricSandPile {
+class SymmetricFastByteSandPile {
 public:
-	SandPileGrid(int width, int height):
-		width(width),
-		height(height),
-		gridQuad(width * height),
-		unstableCells(width * height)
-	{}
+	SymmetricFastByteSandPile(int width, int height);
 
 	long topple();
 	long step(long max_steps);
@@ -36,16 +31,13 @@ public:
 	void setWidth(int width);
 	void setHeight(int height);
 	void setSize(int width, int height);
-
-	void writeToBMPFile(std::string file_name);
-
 private:
 	int width;
 	int height;
 	std::vector<int> gridQuad;
 	std::vector<int> unstableCells;
 
-	void refreshUnstable();
+	void _refreshUnstable();
 };
 ////////////////////////////////////////////////////////////////////////////////
 #endif
